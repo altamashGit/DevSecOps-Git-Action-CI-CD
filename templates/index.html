@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>DevOps Pipeline Dashboard</title>
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+.container {
+    margin-top: 50px;
+}
+.card {
+    background: #1e293b;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 250px;
+}
+.done {
+    color: #22c55e;
+    font-weight: bold;
+}
+h1 {
+    color: #38bdf8;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>DevOps CI/CD Pipeline</h1>
+<p>Flask + GitHub Actions + Docker</p>
+
+{% for task in tasks %}
+<div class="card">
+<h3>{{task.name}}</h3>
+<p class="done">✔ Completed</p>
+</div>
+{% endfor %}
+
+</div>
+</body>
+</html>

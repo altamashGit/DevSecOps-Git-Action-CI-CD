@@ -1,0 +1,8 @@
+
+version: '3'
+services:
+  flask-app:
+    image: devops-demo:latest
+    build: .
+    ports:
+      - "5000:5000"
