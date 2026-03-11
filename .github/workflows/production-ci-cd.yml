@@ -19,16 +19,16 @@ jobs:
 
 
   images-scan:
-   needs: [lint, test, docker-build-push]
+   needs: [ lint, test, docker-push ]
    uses: ./.github/workflows/security-scan.yml
    secrets: inherit
 
   docker-push:
-   needs: [lint, test, artifact, docker-build-push]
+   needs: [ lint, test, artifact, docker-push ]
    uses: ./.github/workflows/docker.yml
    secrets: inherit
 
   deploy:
-   needs: [ lint,Docker-Image-Scan. docker-build-push, push ]
+   needs: [ lint, images-scan, docker-push, ]
    uses: ./.github/workflows/deploy.yml
    secrets: inherit
