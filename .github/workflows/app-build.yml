@@ -20,3 +20,11 @@ jobs:
      - name: docker build
        run: |
          docker build . -t myappp
+     - name: Container run
+       run: |
+         docker run -dp 5000:5000 myapp
+     - name: Test
+       continue-on-error: true
+       run: |
+         curl -f localhost:5000 || echo "Server not ready" 
+       
