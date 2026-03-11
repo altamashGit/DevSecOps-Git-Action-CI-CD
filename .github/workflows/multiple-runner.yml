@@ -10,6 +10,10 @@ jobs:
           echo "OS: Ubuntu"
           hostname
           whoami
+          docker --version
+          python --version
+          node --version
+          git --version
   windows-job:
     runs-on: windows-latest
     steps:
