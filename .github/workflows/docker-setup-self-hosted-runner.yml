@@ -2,6 +2,15 @@ name: Dcoekr setup
 
 on:
   workflow_dispatch:
+    inputs:
+       choice:
+         description: "select branch"
+         required: true
+         type: choice
+         options:
+           - main
+           - dev
+
 
 jobs:
   docker-setup:
