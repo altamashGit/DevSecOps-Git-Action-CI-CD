@@ -1,10 +1,11 @@
 name: Run Tests
 
 on:
-    workflow_run:
-       workflows: ["Lint Check"]
-       types:
-        - completed
+  workflow_call: 
+   # workflow_run:
+   #    workflows: ["Lint Check"]
+   #    types:
+   #     - completed
 
 jobs:
     test:
