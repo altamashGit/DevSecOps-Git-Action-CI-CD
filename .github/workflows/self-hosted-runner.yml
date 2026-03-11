@@ -1,0 +1,22 @@
+name: self Hosted Runner Test
+on: push
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+     - name: Print machine info
+       run: |
+        echo "Runner Hostname: "
+        hostname
+
+     - name: Show working directory
+       run: |
+        pwd
+        ls
+
+     - name: create file
+       run: | 
+        echo "Helllo from self hosted runner" > test-file.txt
+        ls
+
