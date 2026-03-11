@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/lint.yml
 
   test:
-   needs: lint
+   #needs: lint
    uses: ./.github/workflows/test.yml
 
   artifact:
