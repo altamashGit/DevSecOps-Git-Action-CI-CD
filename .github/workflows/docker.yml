@@ -7,7 +7,7 @@ on:
    #         -  completed
 
 jobs:
-    docker:
+    dokcer-push:
         runs-on: ubuntu-latest
         
         steps:

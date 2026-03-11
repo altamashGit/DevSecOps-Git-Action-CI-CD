@@ -5,6 +5,7 @@ on:
       - main
 
 jobs:
+
   lint:
     uses: ./.github/workflows/lint.yml
 
@@ -16,19 +17,18 @@ jobs:
    needs: test
    uses: ./.github/workflows/build.yml
 
-  dokcer-push:
-   needs: [lint, test, artifact, docker-build-push]
-   uses: ./.github/workflows/docker.yml
-   secrets: inherit
 
-  scan:
+  images-scan:
    needs: [lint, test, docker-build-push]
    uses: ./.github/workflows/security-scan.yml
    secrets: inherit
 
-
+  docker-push:
+   needs: [lint, test, artifact, docker-build-push]
+   uses: ./.github/workflows/docker.yml
+   secrets: inherit
 
   deploy:
-   needs: [lint, docker-build, scan, push]
+   needs: [ lint,Docker-Image-Scan. docker-build-push, push ]
    uses: ./.github/workflows/deploy.yml
    secrets: inherit
