@@ -1,10 +1,11 @@
 name: Build Artifact
 
 on:
-    workflow_run:
-       workflows: ["Run Tests"]
-       types:
-        - completed
+  workflow_call:
+    #workflow_run:
+    #   workflows: ["Run Tests"]
+    #   types:
+    #    - completed
 
 jobs:
     test:
