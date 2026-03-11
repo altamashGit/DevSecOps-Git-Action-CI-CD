@@ -10,8 +10,7 @@ jobs:
      - name: git checkout
        uses: actions/checkout@v6
 
-     - name: print wrking directory        
-       run: pwd
-
-     - name: change directory
-       run: cd ~/runner_self_hosted 
+     - name: print wrking directory    
+       run: |    
+         pwd
+         ls
