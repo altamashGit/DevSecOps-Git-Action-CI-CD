@@ -1,4 +1,4 @@
-name: Ddocker-build-&-push
+name: docker-build-push
 on:
     workflow_call:
    # workflow_run:
