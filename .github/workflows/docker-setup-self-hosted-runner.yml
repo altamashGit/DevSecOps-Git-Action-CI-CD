@@ -1,0 +1,23 @@
+name: Dcoekr setup
+
+on: push
+
+jobs:
+  docker-setup:
+    runs-on: self-hosted
+
+
+    steps:
+
+     - name: docker installation
+       run: |
+         sudo apt update -y
+         sudo apt install docker.io -y &&  sudo apt install docker-compose-v2 -y
+         sudo usermod -aG docker $USER &&
+         newgrp  docker
+
+     - name: Check Docker status
+       run: sudo systemctl status docker
+
+     - name: docker version
+       run: docker version
