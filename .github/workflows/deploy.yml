@@ -20,6 +20,4 @@ jobs:
                 key: ${{ secrets.PASSWORD }}
                 script: |
                  docker pull ${{ vars.DOCKER_USERNAME }}/python-app:latest
-                 docker stop python-app || true
-                 docker rm python-app || true
                  docker run -dp 5000:5000 --name python-app-prod ${{ vars.DOCKER_USERNAME }}/python-app:latest
