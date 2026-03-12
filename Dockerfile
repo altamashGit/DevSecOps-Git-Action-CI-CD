@@ -16,7 +16,7 @@ COPY . .
 
 RUN useradd -m appuser
 
-USER appusr
+USER appuser
 
 EXPOSE 5000
 
